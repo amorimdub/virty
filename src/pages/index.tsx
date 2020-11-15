@@ -1,7 +1,7 @@
 import { NextPageContext } from 'next'
 import Image from 'next/image'
 
-import { RichText } from 'prismic-reactjs'
+import { RichText, RichTextBlock } from 'prismic-reactjs'
 
 import Home, { HomeTemplateProps } from 'templates/Home'
 
@@ -68,7 +68,7 @@ export async function getStaticProps(context: NextPageContext) {
       service_image: { url },
       service_content
     }: {
-      service_title: string
+      service_title: RichTextBlock[]
       service_image: {
         url: string
       }
