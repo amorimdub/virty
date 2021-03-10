@@ -20,3 +20,9 @@ export const SectionFooter = styled.section`
     background-color: ${theme.colors.darkGray.normal};
   `}
 `
+
+export const SectionContact = styled(Sections)`
+  ${({ theme }) => css`
+    padding-top: calc(${theme.spacings.xxlarge} * 2);
+  `}
+`

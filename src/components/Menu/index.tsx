@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
-
 import * as S from './styles'
 
-const Menu = () => {
+export type MenuProps = {
+  color?: 'default' | 'white'
+  align?: 'vertical' | 'horizontal'
+}
+
+const Menu = ({ color = 'default', align = 'horizontal' }: MenuProps) => {
   return (
     <S.Wrapper>
-      <S.MenuNav>
-        <S.MenuLink href="/">Home</S.MenuLink>
-        <S.MenuLink href="/">Serviços</S.MenuLink>
-        <S.MenuLink href="/">Contato</S.MenuLink>
+      <S.MenuNav color={color} align={align}>
+        <a href="/">Home</a>
+        <a href="/">Serviços</a>
+        <a href="/">Contato</a>
       </S.MenuNav>
     </S.Wrapper>
   )

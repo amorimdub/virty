@@ -10,6 +10,7 @@ import { Client } from '../../prismic-configuration'
 import { BannerProps } from 'components/Banner'
 import { ServiceProps } from 'components/Service'
 import { QuoteProps } from 'components/Quote'
+import { SocialLinksProps } from 'components/SocialLinks'
 
 // type HomeProps = {
 //   home: any
@@ -61,7 +62,7 @@ export async function getStaticProps(context: NextPageContext) {
     bannerImageUrl: home.data.banner.url
   }
   // const services: ServiceProps[] = []
-  // console.log(home.data.services)
+  console.log(home.data)
   const services: ServiceProps[] = home.data.services.map(
     ({
       service_title,
@@ -90,11 +91,17 @@ export async function getStaticProps(context: NextPageContext) {
     author: RichText.asText(home.data.author)
   }
 
+  const social: SocialLinksProps = {
+    facebook: home.data.facebook.url,
+    instagram: home.data.instagram.url
+  }
+
   return {
     props: {
       banner,
       services,
-      quote
+      quote,
+      social
     }
   }
 }

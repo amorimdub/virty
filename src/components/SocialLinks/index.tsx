@@ -5,13 +5,19 @@ import * as S from './styles'
 export type SocialLinksProps = {
   children?: React.ReactNode
   color?: 'dark' | 'light'
+  facebook: string
+  instagram: string
 }
 
-const SocialLinks = ({ color = 'dark' }: SocialLinksProps) => {
+const SocialLinks = ({
+  color = 'dark',
+  facebook,
+  instagram
+}: SocialLinksProps) => {
   return (
     <S.Wrapper>
       <S.MenuNav>
-        <S.MenuLink color={color} href="/">
+        <S.MenuLink color={color} href={facebook}>
           <svg
             width="32"
             height="32"
@@ -24,7 +30,7 @@ const SocialLinks = ({ color = 'dark' }: SocialLinksProps) => {
             />
           </svg>
         </S.MenuLink>
-        <S.MenuLink color={color} href="/">
+        <S.MenuLink color={color} href={instagram}>
           <svg
             width="32"
             height="32"
