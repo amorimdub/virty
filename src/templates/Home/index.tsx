@@ -42,15 +42,15 @@ const Home = ({ banner, services, quote, social }: HomeTemplateProps) => (
       </Container>
     </S.SectionQuote>
 
-    {/* <S.SectionContact>
+    <S.SectionContact>
       <Container>
         <Spliter />
         <Title>Contato</Title>
       </Container>
       <Container>
-        <Contact></Contact>
+        <Contact />
       </Container>
-    </S.SectionContact> */}
+    </S.SectionContact>
 
     <S.SectionFooter>
       <Container>

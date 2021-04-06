@@ -1,10 +1,10 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
-import { InputProps } from '.'
+import { TextAreaProps } from '.'
 
-type WrapperProps = Pick<InputProps, 'disabled'> & { error?: boolean }
+type WrapperProps = Pick<TextAreaProps, 'disabled'> & { error?: boolean }
 
-export const InputWrapper = styled.div`
+export const TextAreaWrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@ export const InputWrapper = styled.div`
   `}
 `
 
-export const Input = styled.input`
+export const TextArea = styled.textarea`
   ${({ theme }) => css`
     color: ${theme.colors.darkGray.normal};
     font-family: ${theme.font.family};
@@ -55,7 +55,7 @@ export const Error = styled.p`
 
 const wrapperModifiers = {
   error: (theme: DefaultTheme) => css`
-    ${InputWrapper} {
+    ${TextAreaWrapper} {
       border-color: ${theme.colors.danger.normal};
     }
     ${Label} {
@@ -64,14 +64,14 @@ const wrapperModifiers = {
   `,
   disabled: (theme: DefaultTheme) => css`
     ${Label},
-    ${Input} {
+    ${TextArea} {
       cursor: not-allowed;
       color: ${theme.colors.lightGray.normal};
       &::placeholder {
         color: currentColor;
       }
     }
-    ${InputWrapper} {
+    ${TextAreaWrapper} {
       border-color: ${theme.colors.lightGray.normal};
     }
   `

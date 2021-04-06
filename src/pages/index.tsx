@@ -1,5 +1,4 @@
 import { NextPageContext } from 'next'
-import Image from 'next/image'
 
 import { RichText, RichTextBlock } from 'prismic-reactjs'
 
